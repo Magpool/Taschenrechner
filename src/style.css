@@ -1,0 +1,179 @@
+/* Schriftart importieren */
+@font-face {
+  font-family: "Rubik";
+  src: url("/Rubik-VariableFont_wght.ttf");
+}
+
+/* Reset und Basis-Stile */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Schrift-Einstellungen */
+  font-family: "Rubik";
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: normal;
+
+  /* Farbschema */
+  color-scheme: light dark;
+
+  /* Rendering-Optimierungen */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Farbvariablen */
+  --color-text-secondary: #6B6B6B;
+  --color-text-highlight: #EBEBEB;
+  --color-background: #242424;
+  --color-text: #ffffffde;
+  --color-primary: #462878;
+  --color-secondary: #975DFA;
+
+  /* Schatten- und Verlauf-Variablen */
+  --calc-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 
+                 0px 188px 52px 0px rgba(0, 0, 0, 0.01), 
+                 0px 120px 48px 0px rgba(0, 0, 0, 0.04), 
+                 0px 68px 41px 0px rgba(0, 0, 0, 0.15), 
+                 0px 30px 30px 0px rgba(0, 0, 0, 0.26), 
+                 0px 8px 17px 0px rgba(0, 0, 0, 0.29), 
+                 0px 6px 8px 0px rgba(255, 255, 255, 0.10) inset, 
+                 0px -4px 5px 0px rgba(0, 0, 0, 0.22) inset;
+
+  --button-shadow: 0px 11px 7px 0px rgba(0, 0, 0, 0.01), 
+                   0px 7px 7px 0px rgba(0, 0, 0, 0.04), 
+                   0px 4px 6px 0px rgba(0, 0, 0, 0.10), 
+                   0px 2px 4px 0px rgba(0, 0, 0, 0.26), 
+                   0px 0px 2px 0px rgba(0, 0, 0, 0.29), 
+                   0px 2px 3px 0px rgba(255, 255, 255, 0.06) inset;
+
+  --button-linear-vio: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0.01%, rgba(255, 255, 255, 0.05) 100%), #462878;
+  --button-linear-gray: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #2D2A37;
+}
+
+/* Stil für den Body */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Taschenrechner-Hülle */
+.calculator {
+  margin: 5vh auto;
+  width: 22.25rem;
+  border-radius: 3rem;
+  background: #2D2A37;
+  box-shadow: var(--calc-shadow);
+}
+
+/* Zentrierung des Inhalts im Taschenrechner */
+.calculator__center {
+  padding: 3.375rem 2rem 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.625rem;
+}
+
+/* Container für die Anzeige des Taschenrechners */
+.calculator__container {
+  display: flex;
+  width: 18rem;
+  padding: 0 1.375rem 0 1.125rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* SVG-Icons */
+svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  flex-shrink: 0;
+}
+
+/* Text in der Anzeige */
+.calculator__text {
+  color: var(--color-text-secondary);
+  text-align: right;
+  font-size: 1.25rem;
+  line-height: 140%;
+  letter-spacing: -0.025rem;
+}
+
+/* Stil für den Wertbereich */
+.calculator__value {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Textstil für das Ergebnis */
+.calculator__text--result {
+  color: var(--color-text-highlight);
+  text-align: right;
+  font-size: 2.25rem;
+  line-height: 140%;
+  letter-spacing: -0.045rem;
+}
+
+/* Layout für den Ergebnisbereich */
+.calculator__result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Stil für das Tastenfeld */
+.calculator__keypad {
+  width: 18.25rem;
+  height: 23rem;
+  margin: 0 auto;
+}
+
+/* Layout des Tastenfeldes als Grid */
+.calculator__buttons {
+  width: 18.25rem;
+  height: 23rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Allgemeine Stile für Tasten */
+button {
+  color: var(--color-text-highlight);
+  text-align: center;
+  font-size: 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  padding: 1.125rem;
+  border: none;
+  border-radius: 50rem;
+  background: var(--button-linear-gray);
+  box-shadow: var(--button-shadow);
+}
+
+/* Operator-Tasten */
+#btn-divide,
+#btn-multiply,
+#btn-minus,
+#btn-plus,
+#btn-equals {
+  border-radius: 4rem;
+  background: var(--button-linear-vio);
+}
+
+/* Stil für die CE-Taste */
+#btn-ce {
+  color: var(--color-secondary);
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Stil für den aktiven Zustand der Tasten */
+button:active {
+  box-shadow: none;
+}

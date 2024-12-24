@@ -19,7 +19,7 @@ Ein moderner Taschenrechner mit ansprechendem Design und responsivem Layout, der
 
 Dieser Taschenrechner bietet grundlegende mathematische Operationen mit einer ansprechenden Benutzeroberfläche. Das Design basiert auf modernen Web-Technologien wie Flexbox und CSS-Grid.
 
-![screenshot](./public/bild.png.png)
+![screenshot](/bild.png.png)
 
 ---
 
